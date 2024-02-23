@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Formas</title>
+    <link href="css/stils.css" rel="stylesheet" type="text/css">
+    <script>function changetime(days){
+        time=new Date().getTime();
+        let newtime=0;
+         newtime=1000*60*60*24*parseInt(days);
+        
+        datums.value=newtime.toUTCString();
+        document.getElementbyid('output').Inne
+        
+    }</script>
+</head>
+<body>
+    <h1>Formas un ievadlauku piemērs</h1>
+    <form>
+        <p>Šodienas datums <input name="datums" id="output"></p>
+        <p>Ja gribi uzzināt šodienas datumu, spied pogu DATUMS 
+            <input onclick="datums.value=new Date();time=new Date().getTime()" name="poga" value="DATUMS" type="button">
+            <input name="days">
+            <input onclick="changetime(days.value)" name="poga" value="add" type="button">
+        </p>
+        <p>Ja gribi izdzēst datumua lodziņa saturu, spied pogu RESET
+            <input value="RESET" type="reset" onclick="datums.value=''">
+        </p>
+    </form>
+    <form>
+        <div>1.skaitlis<input type="text" name="sk1"> </div>
+        <div>
+            <input value="X" name="reiz" onclick="rez.value=sk1.value*sk2.value" type="button">
+            <input value="+" name="sum" onclick="rez.value=parseInt(sk1.value)+parseInt(sk2.value)" type="button">
+             <input value="-" name="minus" onclick="rez.value=parseInt(sk1.value)-parseInt(sk2.value)" type="button">
+           
+        </div>
+        <div>2.skaitlis<input type="text" name="sk2"> </div>
+        <hr>
+        <div>Rezultāts<input name="rez"> </div>
+    </form>
+</body>
+</html>
