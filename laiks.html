@@ -17,7 +17,7 @@
             <p>ja tas izdodas kaut vai uz 70 %, tad noteikti dzīves kvalitāte uzlabojas un visās jomās izdodas sevi realizēt.</p>
             <p>Vai tu vienmēr paspēj visu izdarīt laikā? Vai tu visus projektus nodod pirms termiņa vai nokavē visus termiņus? Vai tu cīnies ar atlikšanas sindromu?</p>
             <h3>Sastādi savu dienas plānu.</h3>
-            <button id='mybutton' oneclick="mufunction()">show more</button>
+            <button id='mybutton' onclick="myfunction()">show more</button>
             <div id="dots">...</div>
             <div id="longtext">
             <p>Ideālā variantā uzliec plānu uz lapas, kladē, pieraksti savā plānotājā. Plāns tev dos pārskatu un skaidrību par dienas darāmajiem darbiem.</p>
@@ -33,18 +33,19 @@
             </a>
             <script>
             function myfunction(){
-                let dots=document.getElementbyid('dots');
-                let longtext=document.getElementbyid ('longtext');
-                let btntext=document.getElementbyid('mybutton');
+                let dots=document.getElementById('dots');
+                let longtext=document.getElementById ('longtext');
+                let btntext=document.getElementById('mybutton');
                 if(longtext.style.display==='none'){
                     longtext.style.display='inline';
                     dots.style.display='none';
                     btntext.innerHTML='read less';
+                    return 0;
                 }
-                else{
+                if(longtext.style.display!=='none'){
                     longtext.style.display='none';
                     dots.style.display='inline';
-                    btn text.innerHTML='read more';       
+                    btntext.innerHTML='read more';       
                     }
             }
             </script>
