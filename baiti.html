@@ -1,38 +1,52 @@
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/html.html to edit this template
--->
 <html>
+        
+  
     
-    <head>
-        <title>TODO supply a title</title>
+        <head>
+        <title>baiti</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
- <p>apreķināt cik daudz informācijas var lejupieladēt</p>
-    <form>
-        <input name="datums" id="output"><p>sekundes, ja interneta atrums 25Mbps</p>
+        </head>
+        <body>
+        <p>aprēķināt cik daudz informācijas var lejuplādēt</p>
+        <input name="datums" id="output" onclick="elete()"><p>sekundēs, ja interneta ātrums 25Mbps</p>
         <p> atbilde</p>
-      <label for="mervieniba">izveleties mervienību</label>
-      <select id="mervieniba">
-          <option value="1000">kiB</option>
-          <option value="1024">Kb</option>
-          
-      </select>
-      <button onclick="calc(parseInt(document.getElementById('output').value, document.getElementById('mervieniba').value))">uzzinat rezultatu</button>
+  <input type="radio" onclick="calc(document.getElementById('output').value, displayRadioValue())" id="kib" name="1" value="1024">
+  <label for="kib">KiB</label>
+  <input type="radio" onclick="calc(document.getElementById('output').value, displayRadioValue())" id="kb" name="1" value="1000">
+  <label for="kb">KB</label>
+     <!-- <button onclick="calc(document.getElementById('output').value, displayRadioValue()) ">uzzinat rezultatu</button> -->
        <input type="text" name="days" id="rez">
-       <button id="reset" onclick="document.getElementById('output').value='';document.getElementById('rez').value=''">reset</button>
-        <script>function calc(x,y){
+       <button id="reset" onclick="elete()">reset</button>
+        </body>
+     <script>
+            function displayRadioValue(){
+            var ele = document.getElementsByName('1');
+ 
+            for (i = 0; i < ele.length; i++) {
+                if (ele[i].checked){
+               
+                 return ele[i].value;
+            }
+        }
+    }
+         
+            function  calc(x,y){
             console.log(x);
             console.log(y);
             rezult=(1000000*25*x)/parseInt(y);
-            document.getElementById('rez').value=x;
+            document.getElementById('rez').value=rezult;
+            console.log(displayRadioValue());
             
-            
-            return 0;
-        }</script>
-    </form>
-    </body>
+            return 0; }
+function elete(){
+            document.getElementById('output').value='';
+            document.getElementById('rez').value='';
+        var ele = document.getElementsByName("1");
+for(var i=0;i<ele.length;i++){
+    ele[i].checked = false;}
+    }
+                </script>
 </html>
+<!-- calc(document.getElementById('output').value, document.getElementById('mervieniba').value)-->
